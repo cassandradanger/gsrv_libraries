@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "gsrv-libraries-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/gsrvLibraries/GsrvLibrariesWebPart.js",
+          "manifest": "./src/webparts/gsrvLibraries/GsrvLibrariesWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "GsrvLibrariesWebPartStrings": "lib/webparts/gsrvLibraries/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,33 @@
+body{
+  font-family: 'Trefoil sans'
+}
+
+.mainHR{
+  width: 300px;
+}
+.titleHR{
+  color: black;
+  font-size: 13pt;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 0;
+}
+.contentHR{
+  padding: 10px 10px 10px 20px;
+  border: 2px solid #57b372;
+  margin-top: 5px;
+  border-radius: 5px;
+  width: 235px;
+  height: 75px;
+  line-height: 10px;
+  overflow: auto;
+  word-wrap: none;
+}
+.liHR{
+  margin-bottom: 12px;
+  list-style: none;
+}
+.liHR a{
+  color: black;
+}
