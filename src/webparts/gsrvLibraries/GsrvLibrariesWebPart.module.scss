@@ -2,32 +2,35 @@ body{
   font-family: 'Trefoil sans'
 }
 
-.mainHR{
-  width: 300px;
-}
-.titleHR{
-  color: black;
+.titleLI{
+  color: black !important;
   font-size: 13pt;
   font-weight: 600;
   text-align: center;
   display: inline-block;
   margin-bottom: 0;
+  margin-left: 10px;
 }
-.contentHR{
+.contentLI{
   padding: 10px 10px 10px 20px;
-  border: 2px solid #57b372;
+  border: 1px solid #00ae58 !important;
+  border-radius:15px !important;
   margin-top: 5px;
-  border-radius: 5px;
-  width: 235px;
+  width: 175px;
   height: 75px;
   line-height: 10px;
   overflow: auto;
   word-wrap: none;
 }
-.liHR{
+
+.ulLI{
+  margin: 0;
+  padding: 0;
+}
+.liLI{
   margin-bottom: 12px;
   list-style: none;
 }
-.liHR a{
+.liLI a{
   color: black;
 }
