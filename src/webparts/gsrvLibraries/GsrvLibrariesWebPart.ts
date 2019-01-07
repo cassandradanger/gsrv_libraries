@@ -97,7 +97,8 @@ getuser = new Promise((resolve,reject) => {
     //SharePoint PnP Call to get all the document libraries for the site
     sp.site.getDocumentLibraries("https://girlscoutsrv.sharepoint.com" + siteURL).then((data) => {
         data.forEach((data) => {
-          html += `<li class=${styles.liLI}><a href=${data.AbsoluteUrl}>${data.Title}</a></li>`;
+          let url = encodeURI(data.AbsoluteUrl);
+          html += `<li class=${styles.liLI}><a href=${url}>${data.Title}</a></li>`;
         });
         const listContainer: Element = this.domElement.querySelector('#libraryList');
         listContainer.innerHTML = html;

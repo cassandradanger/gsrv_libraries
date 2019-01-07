@@ -4,20 +4,20 @@ body{
 
 .titleLI{
   color: black !important;
-  font-size: 13pt;
+  font-size: 11pt;
   font-weight: 600;
   text-align: center;
   display: inline-block;
-  margin-bottom: 0;
-  margin-left: 10px;
+  margin: 0 !important;
+  padding-left: 15px;
 }
 .contentLI{
   padding: 10px 10px 10px 20px;
   border: 1px solid #00ae58 !important;
   border-radius:15px !important;
-  margin-top: 5px;
+  margin-top: 0;
   width: 175px;
-  height: 75px;
+  height: 90px;
   line-height: 10px;
   overflow: auto;
   word-wrap: none;
