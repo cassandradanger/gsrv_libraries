@@ -37,6 +37,8 @@ export interface ISPLists {
   DeptURL:string;
   CalURL:string;
   a85u:string; // this is the LINK URL
+  URL: string; // url to link to the library
+  Department: string;
  }
 
  //global vars
@@ -80,32 +82,20 @@ getuser = new Promise((resolve,reject) => {
   
   // main REST Call to the list...passing in the deaprtment into the call to 
   //return a single list item
-  public _getListData(): Promise<ISPLists> {  
-    return this.context.spHttpClient.get(`https://girlscoutsrv.sharepoint.com/_api/web/lists/GetByTitle('TeamDashboardSettings')/Items?$filter=Title eq '`+ userDept +`'`, SPHttpClient.configurations.v1)
+  public _getListData(): Promise<ISPLists> { 
+    return this.context.spHttpClient.get(`https://girlscoutsrv.sharepoint.com/_api/web/lists/GetByTitle('TeamDashboardLibraries')/Items?$filter=Department eq '`+ userDept +`'`, SPHttpClient.configurations.v1)
       .then((response: SPHttpClientResponse) => {
         return response.json();
       });
    }
 
  private _renderList(items: ISPList[]): void {
-  var siteURL = "";
-
+  let html: string = '';
   items.forEach((item: ISPList) => {
-    let html: string = '';
-    siteURL = item.DeptURL;
-
-    //SharePoint PnP Call to get all the document libraries for the site
-    sp.site.getDocumentLibraries("https://girlscoutsrv.sharepoint.com" + siteURL).then((data) => {
-        data.forEach((data) => {
-          let url = encodeURI(data.AbsoluteUrl);
-          html += `<li class=${styles.liLI}><a href=${url}>${data.Title}</a></li>`;
-        });
-        const listContainer: Element = this.domElement.querySelector('#libraryList');
-        listContainer.innerHTML = html;
-    }).catch((err) => {
-     console.log(err);
-    });
+    html += `<li class=${styles.liLI}><a href=${item.URL}>${item.Title}</a></li>`;
   });
+  const listContainer: Element = this.domElement.querySelector('#libraryList');
+  listContainer.innerHTML = html;
 }
   
 // this is required to use the SharePoint PnP shorthand REST CALLS
